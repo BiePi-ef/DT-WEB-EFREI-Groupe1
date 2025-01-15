@@ -8,7 +8,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 45.5rem;
 }
 
 /* Bannière */
@@ -45,7 +45,6 @@ body {
 .content {
     flex: 1;
     padding: 1rem;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -85,10 +84,17 @@ body {
     height: auto;
 }
 
+.no-posts-message {
+    text-align: center; /* Centre le texte horizontalement */
+    margin: 5rem 0; /* Ajoute un espacement vertical autour du message */
+    font-size: 1.5rem; /* Ajuste la taille de la police si nécessaire */
+    color: #666; /* Couleur du texte (optionnel) */
+}
+
 /* Bouton "Créer un post" */
 #createPostBtn {
     position: fixed;
-    bottom: 2rem;
+    bottom: 8rem;
     right: 2rem;
     background-color: #00008B;
     color: white;
@@ -103,7 +109,8 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     width: 100%;
     margin-top: auto;
 }

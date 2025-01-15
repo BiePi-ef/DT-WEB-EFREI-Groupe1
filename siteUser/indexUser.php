@@ -1,10 +1,10 @@
 <?php
 include("headerUser.php");
 
-include('../backend/controller/postsController.php');
+include('../backend/Model/postsModel.php');
 
-$postsController = new PostsController();
-$recentPosts = $postsController->getRecentPosts();
+$postsModel = new PostsModel();
+$recentPosts = $postsModel->getRecentPosts();
 ?>
 
 <div class="content">
@@ -17,14 +17,18 @@ $recentPosts = $postsController->getRecentPosts();
     </div>
 
     <div id="postsFeed">
-        <?php foreach ($recentPosts as $post): ?>
-            <div class="post">
-                <h3><?php echo htmlspecialchars($post['title']); ?></h3>
-                <p><?php echo htmlspecialchars(substr($post['content'], 0, 200)) . '...'; ?></p>
-                <img src="<?php echo htmlspecialchars($post['image_link']); ?>" alt="Image du post">
-                <p>Date: <?php echo $post['date_create']; ?></p>
-            </div>
-        <?php endforeach; ?>
+        <?php if (empty($recentPosts)): ?>
+            <p class="no-posts-message">Aucun poste disponible.</p>
+        <?php else: ?>
+            <?php foreach ($recentPosts as $post): ?>
+                <div class="post">
+                    <h3><?php echo htmlspecialchars($post['title']); ?></h3>
+                    <p><?php echo htmlspecialchars(substr($post['content'], 0, 200)) . '...'; ?></p>
+                    <img src="<?php echo htmlspecialchars($post['link_image']); ?>" alt="Image du post">
+                    <p>Date: <?php echo htmlspecialchars($post['date_create']); ?></p>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 
     <button id="createPostBtn">Créer un post</button>
