@@ -1,7 +1,7 @@
 <?php
 
+$_POST['page']='test';
 $page = isset($_POST['page']) ? $_POST['page'] : 'accueilUser';
-// $page = '';
 
 // pages :
 // - 
@@ -11,6 +11,10 @@ $page = isset($_POST['page']) ? $_POST['page'] : 'accueilUser';
 
 switch($page)
 {
+    case 'test':
+        include_once "../siteUser/test.php";
+        break;
+
     case 'accueilUser':
         // include_once "controller/produitsController.php";
         // $produit = new ProduitsController;
