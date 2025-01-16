@@ -10,7 +10,7 @@
     <header>
         <div class="banner">
             <h1>Efreddit</h1>
-                <a href="login.php">
+                <a href="?page=loginUser">
                     <button id="login">Connexion</button>
                 </a>
         </div>
