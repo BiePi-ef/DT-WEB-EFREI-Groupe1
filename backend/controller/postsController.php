@@ -72,6 +72,23 @@ class PostsController
         {
             $link = '?page=loginUser';
         }
+
+        // pour supprimer un post :
+        // filter_input(INPUT_TYPE, 'CONTENT') permet d'acceder à $_TYPE['content'] de manière sécurisée.
+        if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == 'POST' and isset($_POST['deletePost']))
+        {
+            if ($this->deletePostById($_POST['id_post']))
+            {
+                echo 'Le post ' . $_POST['post_title'] . ' a été supprimé avec succès !';
+            }
+            else
+            {
+                // echo 'ey';
+            }
+            unset($_POST['deletePost']);
+            $this->getPosts();
+        }
+
         include_once './accueil.php';
     }
 
@@ -84,5 +101,10 @@ class PostsController
     public function getImagesByIdPost($id)
     {
         return $this->model->getImagesByIdPost($id);
+    }
+
+    public function deletePostById($id)
+    {
+        return $this->model->deletePostById($id);
     }
 }

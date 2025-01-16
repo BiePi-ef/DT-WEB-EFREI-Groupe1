@@ -121,8 +121,6 @@ class UsersController
     {
         if (isset($_POST['email'])) 
         {
-            echo 'entered 1';
-            
             $email = $_POST['email'];
             $admin = $this->model->getAdminByEmail($email);
             

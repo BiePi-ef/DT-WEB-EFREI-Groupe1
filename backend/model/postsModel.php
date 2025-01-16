@@ -67,4 +67,10 @@ class PostsModel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function deletePostById($id)
+    {
+        $query = "DELETE FROM posts WHERE id_post = $id;";
+        return $this->bdd->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
