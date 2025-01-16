@@ -1,6 +1,6 @@
 <div id="postsFeed">
     <?php if (empty($posts)): ?>
-        <p class="no-posts-message">Aucun poste disponible.</p>
+        <p class="no-posts-message">Aucun posts disponible.</p>
     <?php else: ?>
         <?php foreach ($posts as $post): ?>
             <div class="post">
