@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription - Efreddit</title>
-    <link rel="stylesheet" href="styles/signup.css">
+    <title>Connexion - Efreddit</title>
+<link rel="stylesheet" href="styles/login.css">
 </head>
-<body>
+<div class="content">
     <header>
         <div class="banner">
             <h1>Efreddit</h1>
@@ -15,12 +15,8 @@
 <main>
 
 <div class="content">
-    <h2>Inscription</h2>
-    <form action="backend/controllers/signup-verif.php" method="POST">
-        <div class="form-group">
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" required>
-        </div>
+    <h2>Connexion</h2>
+    <form action="" method="POST">
         <div class="form-group">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
@@ -29,15 +25,13 @@
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <button type="submit" id="registerBtn">S'inscrire</button>
+        <button type="submit" id="loginBtn">Se connecter</button>
     </form>
-    <p>Vous avez déjà un compte ? <a href="login.php">Connectez-vous</a></p>
+    <p>Vous n'avez pas un compte ? <a href="signupAdmin.php">Inscrivez-vous</a></p>
 </div>
 
 </main>
     <footer>
         <p>&copy; 2025 Efreddit. Tous droits réservés.</p>
     </footer>
-    <script src="scripts/main.js"></script>
-</body>
-</html>
+    

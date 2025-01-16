@@ -10,15 +10,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validation des données
     if (!preg_match("/^[a-zA-Z0-9_]{3,20}$/", $username)) {
-        die("Nom d'utilisateur invalide.");
+        echo ("Nom d'utilisateur invalide.");
     }
 
     if (!preg_match("/^[a-zA-Z0-9._%+-]{1,50}@[a-zA-Z0-9.-]{1,20}\.[a-zA-Z]{1,3}$/", $email)) {
-        die("Email invalide.");
+        echo ("Email invalide.");
     }
 
     if (strlen($password) < 12) {
-        die("Le mot de passe doit contenir au moins 12 caractères.");
+        echo ("Le mot de passe doit contenir au moins 12 caractères.");
     }
 
     // Hachage du mot de passe
