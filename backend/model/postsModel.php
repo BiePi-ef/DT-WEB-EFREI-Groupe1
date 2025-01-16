@@ -47,9 +47,8 @@ class PostsModel {
 
     public function getImagesByIdPost($id)
     {
-        $query = "SELECT i.link_image FROM images AS i
-                    INNER JOIN posts AS p ON p.id_post = i.id_post
-                    ORDER BY p.date_create DESC";
+        $query = "SELECT link_image FROM images
+                    WHERE id_post = '$id'";
         return $this->bdd->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 

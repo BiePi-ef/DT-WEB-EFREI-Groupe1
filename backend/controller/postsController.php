@@ -53,6 +53,7 @@ class PostsController
     public function getPosts()
     {
         $posts = $this->model->getPosts();
+        $imagesArray = [];
 
         for ($i = 0; $i<count($posts); $i ++)
         {
@@ -63,8 +64,6 @@ class PostsController
             {
                 array_push($posts[$i]['images'], $imageArray['link_image']);
             }
-        
-            // echo var_dump($posts[$i]['images']);
         }
         include_once './accueil.php';
     }
