@@ -1,20 +1,82 @@
 <?php
-include_once '../backend/bdd/bdd.php';
+include_once '../backend/model/postsModel.php';
 
-class PostsController {
-    private $bdd;
+class PostsController
+{
+    private $model;
 
-    public function __construct() {
-        $this->bdd = Bdd::connexion();
+    // methode executé à l'instanciation
+    public function __construct()
+    {
+        $this->model = new PostsModel;
     }
 
-    public function getRecentPosts() {
-        $query = "SELECT p.id_post, p.title, p.content, p.date_create, i.link_image 
-                  FROM posts p 
-                  LEFT JOIN images i ON p.id_post = i.id_post 
-                  ORDER BY p.date_create DESC 
-                  LIMIT 10";
-        $stmt = $this->bdd->query($query);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function createPost($title,$content,$id_user,$images){
+
+        if(isset($_POST['email']))
+        {   
+            $title = $_POST['title'];
+            $content = $_POST['content'];
+            $id_user = $_POST['id_user'];
+            $images = $_POST['images'];
+
+
+            $isPostCreated = $this->model->createPost($title,$content,$id_user);
+            // images is an array of images links
+            $areImagesCreated = $this->model->addImages($images);
+
+            if($isPostCreated)
+            {
+                echo "post enregistré ok";
+            }
+            if($areImagesCreated)
+            {
+                echo "</br> images enregistrées ok";
+            }
+            else
+            {
+                echo "erreur lors de l'enregistrement du post";
+
+                // insert page creation post again
+                // $this->();
+
+            }
+
+        }
+        else{
+            // insert page creation post again
+            // $this->getFromCommande();
+        }
+
+    }
+
+    public function getPosts()
+    {
+        $posts = $this->model->getPosts();
+
+        for ($i = 0; $i<count($posts); $i ++)
+        {
+            $imagesArray = $this->getImagesByIdPost($posts[$i]['id_post']);
+
+            $posts[$i]['images'] = [];
+            foreach ($imagesArray as $imageArray)
+            {
+                array_push($posts[$i]['images'], $imageArray['link_image']);
+            }
+        
+            // echo var_dump($posts[$i]['images']);
+        }
+        include_once './accueil.php';
+    }
+
+    public function getPostByUser($id)
+    {
+        $posts = $this->model->getPostsByUser($id);
+        include_once 'view/article.php';
+    }
+
+    public function getImagesByIdPost($id)
+    {
+        return $this->model->getImagesByIdPost($id);
     }
 }
