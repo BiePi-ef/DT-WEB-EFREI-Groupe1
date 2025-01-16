@@ -1,8 +1,7 @@
 <?php
 include_once '../backend/bdd/bdd.php';
 
-class PostsModel
-{
+class PostsModel {
     private $bdd;
 
     public function __construct()

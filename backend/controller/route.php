@@ -1,7 +1,7 @@
 <?php
 
 // $_POST['page'] = 'connexionUser';
-$page = isset($_POST['page']) ? $_POST['page'] : 'accueilUser';
+$page = isset($_GET['page']) ? $_GET['page'] : 'accueilUser';
 
 // pages :
 // - 
@@ -24,19 +24,24 @@ switch($page)
         // $user->getUserByEmail();
         break;
 
-    case 'connexionUser':
+    case 'loginUser':
         include_once "../backend/controller/usersController.php";
         $user = new usersController;
         $user->connexion();
         break;
 
-
+    case 'signupUser':
+        include_once "../backend/controller/usersController.php";
+        $user = new usersController;
+        $user->inscription();
+        break;
+    
     case 'accueilAdmin' :
         include_once "../backend/controller/postsController.php" ;
         $posts = new PostsController ;
         $posts->getPosts() ;
         break ;
-
+    
     default :
     include './404.php';
 }
