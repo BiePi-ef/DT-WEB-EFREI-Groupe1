@@ -37,10 +37,7 @@ class PostsController
             else
             {
                 echo "erreur lors de l'enregistrement du post";
-
-                // insert page creation post again
-                // $this->();
-
+                include_once './createPost.php';
             }
 
         }

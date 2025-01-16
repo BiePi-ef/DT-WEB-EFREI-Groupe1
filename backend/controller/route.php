@@ -47,16 +47,24 @@ switch($page)
         $posts = new PostsController ;
         $posts->getPosts() ;
         break ;
+
     case 'loginAdmin':
         include_once "../backend/controller/usersController.php";
         $user = new usersController;
         $user->connexionAdmin();
         break;
-    case 'signupUser':
+    
+    case 'signupAdmin':
         include_once "../backend/controller/usersController.php";
         $user = new usersController;
         $user->inscriptionAdmin();
-        break;    
+        break;
+
+    case 'logout':
+        include_once "../backend/controller/usersController.php";
+        $user = new UsersController;
+        $user->deconnexion();
+        break;
 
     default :
     include './404.php';
