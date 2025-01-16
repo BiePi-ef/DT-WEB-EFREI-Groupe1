@@ -10,11 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validation des données
     if (!preg_match("/^[a-zA-Z0-9_]{3,20}$/", $username)) {
-        echo("Nom d'utilisateur invalide.");
+        echo ("Nom d'utilisateur invalide.");
     }
 
     if (!preg_match("/^[a-zA-Z0-9._%+-]{1,50}@[a-zA-Z0-9.-]{1,20}\.[a-zA-Z]{1,3}$/", $email)) {
-        echo("Email invalide.");
+        echo ("Email invalide.");
     }
 
     if (strlen($password) < 12) {
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
         
     } catch (PDOException $e) {
-        die("Erreur lors de l'inscription : " . $e->getMessage());
+        echo("Erreur lors de l'inscription : " . $e->getMessage());
     }
 }
 ?>

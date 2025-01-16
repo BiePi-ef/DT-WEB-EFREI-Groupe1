@@ -13,11 +13,14 @@
         <div class="banner">
             <h1>Efreddit</h1>
             <?php if (!isset($_SERVER['id_admin'])): ?>
-                <a href="login.php">
+                <a href="loginAdmin.php">
                     <button id="login">Connexion</button>
-            <?php if (isset($_SERVER['id_admin'])): ?>
-
                 </a>
+            <?php else : htmlspecialchars($_SESSION['admin_name'])?>
+    
+                <a href="logout.php">Déconnexion</a> 
+            <?php endif ; ?>
+                
         </div>
     </header>
-    <main>
+</body>
