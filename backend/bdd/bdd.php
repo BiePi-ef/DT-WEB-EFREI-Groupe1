@@ -7,12 +7,10 @@ class Bdd{
         try
         {
             //$bdd = new PDO("pgsql:host=localhost;port=5432;dbname=challenge_web","postgres","123");
-<<<<<<< HEAD
+
             $bdd = new PDO("pgsql:host=localhost;port=5432;dbname=challenge_web","postgres","123");
-=======
             $bdd = new PDO("pgsql:host=localhost;port=5432;dbname=challenge_web","postgres","Kawai2731!");
             // $bdd = new PDO("pgsql:host=localhost;port=5432;dbname=challenge-web","postgres","Postgrey");
->>>>>>> 302984184a86c3d729780cdebdba9ef7dc0a72af
             //echo "connexion BDD OK";
             return $bdd;
         }
