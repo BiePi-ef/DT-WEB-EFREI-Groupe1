@@ -83,4 +83,9 @@ class UsersController
             $this->getFormConnexion();
         }
     }
+
+    public function getUserByEmail($email)
+    {
+        return $this->model->getUserByEmail($email);
+    }
 }

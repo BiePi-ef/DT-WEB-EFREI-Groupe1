@@ -11,6 +11,11 @@ class PostsController
         $this->model = new PostsModel;
     }
 
+    public function getUserAccueilPage()
+    {
+        include_once './siteUser/indexUser.php';
+    }
+
     public function createPost($title,$content,$id_user,$images){
 
         if(isset($_POST['email']))
@@ -53,7 +58,7 @@ class PostsController
     public function getPosts()
     {
         $posts = $this->model->getPosts();
-        include_once './view/articles.php';
+        $this->getUserAccueilPage();
     }
 
     public function getPostByUser($id)
