@@ -47,10 +47,14 @@ class PostsModel
         return $this->bdd->query("SELECT * FROM posts WHERE id_user=$id")->fetchAll(PDO::FETCH_ASSOC);
     }
 
-}
+    public function getRecentPosts() {
+        $query = "SELECT p.id_post, p.title, p.content, p.date_create, i.link_image 
+                  FROM posts p 
+                  LEFT JOIN images i ON p.id_post = i.id_post 
+                  ORDER BY p.date_create DESC 
+                  LIMIT 10";
+        $stmt = $this->bdd->query($query);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
-// test 
-/*
-$articles = new ArticlesModel;
-var_dump($articles->getArticles());
-*/
+}

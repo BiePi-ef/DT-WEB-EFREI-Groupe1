@@ -16,6 +16,10 @@ switch($page)
         break;
 
     case 'accueilUser':
+        include_once "../siteUser/indexUser.php";
+        // include_once "controller/produitsController.php";
+        // $produit = new ProduitsController;
+        // $produit->getLastProduct();
         // include_once "controller/usersController.php";
         // $user = new usersController;
         // $user->();

@@ -9,4 +9,4 @@
     $a = $_SESSION['user']['user_name'];
     ?>
 
-<p>id : <?php echo $a; ?></p>
+<p><?php $test["id_user"] ?></p>
