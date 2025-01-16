@@ -1,13 +1,12 @@
 <h1>Test</h1>
 
 <?php
-    include_once '../backend/bdd/bdd.php';
 
-    $bdd = Bdd::connexion();
+    $_POST['mdp'] = 'test';
+    $_POST['email'] = 'test@test.test';
+    
+    echo $_SESSION['user']['user_name'];
+    $a = $_SESSION['user']['user_name'];
+    ?>
 
-    $test = $bdd->query("SELECT * FROM users;")->fetchAll(PDO::FETCH_ASSOC);
-
-    echo var_dump($test);
-?>
-
-<p><?php $test["id_user"] ?></p>
+<p>id : <?php echo $a; ?></p>
