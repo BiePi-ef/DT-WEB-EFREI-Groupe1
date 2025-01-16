@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="styles/signup.css">
+
 <div class="content">
     <h2>Inscription</h2>
     <form action="" method="POST">

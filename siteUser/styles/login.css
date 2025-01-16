@@ -59,7 +59,7 @@ input[type="password"] {
 button {
     width: 100%; /* Prend toute la largeur du conteneur */
     padding: 0.5rem; /* Espacement interne */
-    background-color: #00008B; /* Bleu foncé */
+    background-color: black; /* Bleu foncé */
     color: white; /* Texte blanc */
     border: none; /* Pas de bordure */
     border-radius: 4px; /* Coins arrondis */
