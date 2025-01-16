@@ -52,9 +52,12 @@ class PostsModel {
         return $this->bdd->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getPostsByUser($id)
+    public function getPostsByUser($id_user)
     {
-        return $this->bdd->query("SELECT * FROM posts WHERE id_user=$id")->fetchAll(PDO::FETCH_ASSOC);
+        $query = "SELECT * FROM posts WHERE id_user = ? ORDER BY date_create DESC";
+        $stmt = $this->bdd->prepare($query);
+        $stmt->execute([$id_user]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getRecentPosts() {

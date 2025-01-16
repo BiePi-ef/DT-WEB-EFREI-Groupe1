@@ -72,6 +72,12 @@ switch($page)
         $user->deconnexionUser();
         break;
 
+    case 'yourPosts':
+    include_once "../backend/controller/postsController.php";
+    $postsController = new PostsController;
+    $postsController->getUserPosts();
+    break;
+
     default :
     include './404.php';
 }

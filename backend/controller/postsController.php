@@ -97,6 +97,20 @@ class PostsController
     //     $posts = $this->model->getPostsByUser($id);
     //     include_once 'view/article.php';
     // }
+    public function getUserPosts()
+    {
+        if (!isset($_SESSION['user'])) {
+            header("Location: login.php");
+            exit();
+        }
+
+        $id_user = $_SESSION['user']['id_user'];
+        $posts = $this->model->getPostsByUser($id_user);
+
+        // Incluez la vue pour afficher les posts
+        include_once './yourPosts.php';
+    }
+
 
     public function getImagesByIdPost($id)
     {

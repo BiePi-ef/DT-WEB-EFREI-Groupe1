@@ -12,6 +12,7 @@
             <h1>Efreddit</h1>
             <?php if (isset($_SESSION['user'])) { ?>
                 <p><?php echo htmlspecialchars($_SESSION['user']['user_name']); ?></p>
+                <a href="?page=yourPosts"><button id="yourPosts">Vos Posts</button></a>
                 <a href="?page=logoutuser"><button id="logout">Déconnexion</button></a>
             <?php } else { ?>
                 <a href="?page=loginUser">

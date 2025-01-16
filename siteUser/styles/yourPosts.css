@@ -1,0 +1,54 @@
+/* Styles généraux pour la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour le titre principal */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Style pour le conteneur principal */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le fil d'actualité des posts */
+#postsFeed {
+    margin-top: 20px;
+}
+
+/* Style pour chaque post */
+.post {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post h3 {
+    margin: 0;
+    color: #007BFF;
+}
+
+.post p {
+    color: #555;
+}
+
+/* Style pour les messages d'absence de posts */
+p {
+    text-align: center;
+    font-size: 1.2em;
+}
