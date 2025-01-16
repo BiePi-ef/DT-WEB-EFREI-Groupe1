@@ -9,7 +9,9 @@
 <body>
     <header>
         <div class="banner">
-            <h1>Efreddit</h1>
+            <a href="indexUser.php">
+                <h1>Efreddit</h1>
+            </a>
         </div>
     </header>
     <main>
