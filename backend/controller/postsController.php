@@ -11,10 +11,11 @@ class PostsController
         $this->model = new PostsModel;
     }
 
-    public function createPost($title,$content,$id_user,$images){
+    public function createPost(){
 
-        if(isset($_POST['email']))
-        {   
+        if(isset($_POST['title']))
+        {
+            echo "works";
             $title = $_POST['title'];
             $content = $_POST['content'];
             $id_user = $_POST['id_user'];
@@ -44,8 +45,7 @@ class PostsController
 
         }
         else{
-            // insert page creation post again
-            // $this->getFromCommande();
+            include_once './createPost.php';
         }
 
     }
@@ -65,14 +65,24 @@ class PostsController
                 array_push($posts[$i]['images'], $imageArray['link_image']);
             }
         }
+
+        // quand la page d'accueil a chargé :
+        $link = "";
+        // si l'user est connecté :
+        if (isset($_SESSION['user'])){
+            $link = '?page=createPost';
+        } else
+        {
+            $link = '?page=loginUser';
+        }
         include_once './accueil.php';
     }
 
-    public function getPostByUser($id)
-    {
-        $posts = $this->model->getPostsByUser($id);
-        include_once 'view/article.php';
-    }
+    // public function getPostByUser($id)
+    // {
+    //     $posts = $this->model->getPostsByUser($id);
+    //     include_once 'view/article.php';
+    // }
 
     public function getImagesByIdPost($id)
     {
