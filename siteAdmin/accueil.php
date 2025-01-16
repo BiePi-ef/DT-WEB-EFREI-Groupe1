@@ -9,5 +9,4 @@
 
     <?php include_once './postsFeed.php'; ?>
 
-    <button id="createPostBtn">Créer un post</button>
-</div>
+   
