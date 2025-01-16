@@ -7,10 +7,10 @@
                 <h3><?php echo htmlspecialchars($post['title']); ?></h3>
                 <p><?php echo htmlspecialchars(substr($post['content'], 0, 200)) . '...'; ?></p>
 
-                    <?php include "./displayImages.php"; ?>
-                    
-                    <p>Date: <?php echo htmlspecialchars($post['date_create']); ?></p>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
+                <?php include "./displayImages.php"; ?>
+                
+                <p>Date: <?php echo htmlspecialchars($post['date_create']); ?></p>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>

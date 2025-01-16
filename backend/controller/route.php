@@ -36,6 +36,12 @@ switch($page)
         $user->inscription();
         break;
 
+        case 'accueilAdmin' :
+            include_once "../backend/controller/postsController.php" ;
+            $posts = new PostsController ;
+            $posts->getPosts() ;
+            break ;
+
     default :
     include './404.php';
 }
