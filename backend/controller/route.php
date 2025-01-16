@@ -26,21 +26,27 @@ switch($page)
 
     case 'loginUser':
         include_once "../backend/controller/usersController.php";
-        $user = new usersController;
+        $user = new UsersController;
         $user->connexion();
         break;
 
     case 'signupUser':
         include_once "../backend/controller/usersController.php";
-        $user = new usersController;
+        $user = new UsersController;
         $user->inscription();
         break;
 
-        case 'accueilAdmin' :
-            include_once "../backend/controller/postsController.php" ;
-            $posts = new PostsController ;
-            $posts->getPosts() ;
-            break ;
+    case 'createPost':
+        include_once "../backend/controller/postsController.php";
+        $user = new PostsController;
+        $user->createPost();
+        break;
+
+    case 'accueilAdmin' :
+        include_once "../backend/controller/postsController.php" ;
+        $posts = new PostsController ;
+        $posts->getPosts() ;
+        break ;
 
     default :
     include './404.php';

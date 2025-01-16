@@ -18,7 +18,7 @@
             </div>
         </div>
 
-            <?php include_once './postsFeed.php'; ?>
+        <?php include_once './postsFeed.php'; ?>
 
-            <button id="createPostBtn">Créer un post</button>
+        <a href=<?php echo $link ?> id="createPostBtn">Créer un post</a>
 </div>
