@@ -1,6 +1,6 @@
 <?php
 
-$_POST['page'] = 'connexionUser';
+// $_POST['page'] = 'connexionUser';
 $page = isset($_POST['page']) ? $_POST['page'] : 'accueilUser';
 
 // pages :
@@ -16,7 +16,7 @@ switch($page)
         break;
 
     case 'accueilUser':
-        include_once "../backend/siteUser/indexUser.php";
+        include_once "../backend/controller/postsController.php";
         $posts = new PostsController;
         $posts->getPosts();
         // include_once "../backend/controller/usersController.php";

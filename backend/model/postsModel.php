@@ -39,7 +39,19 @@ class PostsModel
 
     public function getPosts()
     {
-        return $this->bdd->query("SELECT posts.*, users.* FROM posts INNER JOIN users ON users.id_user = posts.id_user;")->fetchAll(PDO::FETCH_ASSOC);
+        $query = "SELECT p.id_post, p.title, p.content, p.date_create FROM posts AS p
+                    INNER JOIN users AS u ON u.id_user = p.id_user
+                    ORDER BY p.date_create DESC 
+                    LIMIT 50;";
+        return $this->bdd->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getImagesByIdPost($id)
+    {
+        $query = "SELECT i.link_image FROM images AS i
+                    INNER JOIN posts AS p ON p.id_post = i.id_post
+                    ORDER BY p.date_create DESC";
+        return $this->bdd->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getPostsByUser($id)
@@ -48,7 +60,7 @@ class PostsModel
     }
 
     public function getRecentPosts() {
-        $query = "SELECT p.id_post, p.title, p.content, p.date_create, i.link_image 
+        $query = "SELECT p.id_post, p.title, p.content, p.date_create, i.link_image
                   FROM posts p 
                   LEFT JOIN images i ON p.id_post = i.id_post 
                   ORDER BY p.date_create DESC 

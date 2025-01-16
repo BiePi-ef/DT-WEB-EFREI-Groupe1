@@ -11,11 +11,6 @@ class PostsController
         $this->model = new PostsModel;
     }
 
-    public function getUserAccueilPage()
-    {
-        include_once './siteUser/indexUser.php';
-    }
-
     public function createPost($title,$content,$id_user,$images){
 
         if(isset($_POST['email']))
@@ -43,7 +38,7 @@ class PostsController
                 echo "erreur lors de l'enregistrement du post";
 
                 // insert page creation post again
-                // $this->getFromCommande();
+                // $this->();
 
             }
 
@@ -58,12 +53,30 @@ class PostsController
     public function getPosts()
     {
         $posts = $this->model->getPosts();
-        $this->getUserAccueilPage();
+
+        for ($i = 0; $i<count($posts); $i ++)
+        {
+            $imagesArray = $this->getImagesByIdPost($posts[$i]['id_post']);
+
+            $posts[$i]['images'] = [];
+            foreach ($imagesArray as $imageArray)
+            {
+                array_push($posts[$i]['images'], $imageArray['link_image']);
+            }
+        
+            // echo var_dump($posts[$i]['images']);
+        }
+        include_once './accueil.php';
     }
 
     public function getPostByUser($id)
     {
         $posts = $this->model->getPostsByUser($id);
         include_once 'view/article.php';
+    }
+
+    public function getImagesByIdPost($id)
+    {
+        return $this->model->getImagesByIdPost($id);
     }
 }
