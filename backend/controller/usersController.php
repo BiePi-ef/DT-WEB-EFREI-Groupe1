@@ -111,6 +111,13 @@ class UsersController
         header('Location: indexAdmin.php');
     }
 
+    public function deconnexionUser()
+    {
+        echo $_SERVER['REQUEST_URI'];
+        session_destroy();
+        header('Location: indexUser.php');
+    }
+
     public function getUserByEmail($email)
     {
         return $this->model->getUserByEmail($email);

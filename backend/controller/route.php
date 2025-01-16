@@ -66,6 +66,12 @@ switch($page)
         $user->deconnexion();
         break;
 
+    case 'logoutuser':
+        include_once "../backend/controller/usersController.php";
+        $user = new UsersController;
+        $user->deconnexionUser();
+        break;
+
     default :
     include './404.php';
 }
