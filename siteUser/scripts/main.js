@@ -31,28 +31,28 @@ function addLinkToList(link, list) {
     return list.push(linkCopy);
 }
 
-function postCreatePOST(images_url){
+// function postCreatePOST(images_url){
     
-    const title = document.getElementById('formTitle').value;
-    console.log(title);
-    const content = document.getElementById('formContent').value;
+//     const title = document.getElementById('formTitle').value;
+//     console.log(title);
+//     const content = document.getElementById('formContent').value;
 
-    console.log("entered function")
-    fetch("http://localhost/Projet%20Web/siteUser/indexUser.php" + "/get", {
-        method: 'POST',
-        headers: {
-            'Content-Type':'application/x-www-form-urlencoded'
-        },
-        body: JSON.stringify({
-            'createPost': true,
-            'title': title,
-            'content': content,
-            'images_url': images_url
-        })
-    })
-    .then((response) => response.json())
-    .then((json) => console.log(json))
-    .catch(error => {
-        console.error(error);
-    });
-}
+//     console.log("entered function")
+//     fetch("http://localhost/Projet%20Web/siteUser/indexUser.php" + "/get", {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type':'application/x-www-form-urlencoded'
+//         },
+//         body: JSON.stringify({
+//             'createPost': true,
+//             'title': title,
+//             'content': content,
+//             'images_url': images_url
+//         })
+//     })
+//     .then((response) => response.json())
+//     .then((json) => console.log(json))
+//     .catch(error => {
+//         console.error(error);
+//     });
+// }
