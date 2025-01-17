@@ -1,0 +1,13 @@
+h1{
+    margin: 0;
+    text-align: center;
+}
+div.user{
+    margin : 0 ;
+    text-align: center;
+    font-family: arial;
+    color : white ;
+    height: auto;
+    align-items: center;
+    height: fit-content;
+}

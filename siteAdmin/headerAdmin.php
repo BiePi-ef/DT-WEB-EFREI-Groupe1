@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="banner">
-        <button id="accueil"><a href="?page=accueilUser"><h1>Efreddit</h1></button></a>
+        <button id="accueil"><a href="?page=accueilUser"><h1>Efreddit</h1></a></button>
             
         
         <?php if (!isset($_SESSION['admin'])){ ?>
