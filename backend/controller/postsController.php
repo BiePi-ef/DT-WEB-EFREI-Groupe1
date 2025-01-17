@@ -13,12 +13,14 @@ class PostsController
 
     public function createPost(){
 
-        if(isset($_POST['title']))
+        if(isset($_POST['createPost']))
         {
+            echo var_dump($_POST['images_url']);
+
             echo "works";
             $title = $_POST['title'];
             $content = $_POST['content'];
-            $id_user = $_POST['id_user'];
+            $id_user = $_SESSION['user']['id_user'];
             $images = $_POST['images'];
 
 
@@ -103,9 +105,21 @@ class PostsController
             header("Location: login.php");
             exit();
         }
-
+        
         $id_user = $_SESSION['user']['id_user'];
         $posts = $this->model->getPostsByUser($id_user);
+        
+        $imagesArray = [];
+        for ($i = 0; $i<count($posts); $i ++)
+        {
+            $imagesArray = $this->getImagesByIdPost($posts[$i]['id_post']);
+
+            $posts[$i]['images'] = [];
+            foreach ($imagesArray as $imageArray)
+            {
+                array_push($posts[$i]['images'], $imageArray['link_image']);
+            }
+        }
 
         // Incluez la vue pour afficher les posts
         include_once './yourPosts.php';

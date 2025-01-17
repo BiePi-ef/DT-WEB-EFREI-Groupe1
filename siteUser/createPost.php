@@ -1,19 +1,22 @@
-    <main>
-        <h2>Créer un nouveau post</h2>
-        <form action="" method="POST">
-            <div>
-                <label for="title">Titre :</label>
-                <input type="text" id="title" name="title" required>
-            </div>
-            <div>
-                <label for="content">Contenu :</label>
-                <textarea id="content" name="content" rows="4" required></textarea>
-            </div>
-            <div>
-                <label for="image_url">Ajouter un lien d'image :</label>
-                <input type="text" id="image_url" name="image_url" placeholder="lien d'image" required>
-            </div>
-            <button type="submit">Publier le Post</button>
-        </form>
+<main>
+    <h2>Créer un nouveau post</h2>
+    <form x-data="{ images_url: [] }" id="createPost" action="" method="post">
+        <div>
+            <label for="formTitle">Titre :</label>
+            <input type="text" id="formTitle" name="formTitle" required>
+        </div>
+        <div>
+            <label for="formContent">Contenu :</label>
+            <textarea id="formContent" name="formContent" rows="4"></textarea>
+        </div>
+
+        <div id="images">
+            <?php include_once './addImage.php'; ?>
+            <template x-for="image_url in images_url">
+                <p x-text="image_url"></p>
+            </template>
+        </div>
+        <button type="submit" x-on:click="postCreatePOST(images_url)">Publier le Post</button>
+    </form>
 
     </main>
