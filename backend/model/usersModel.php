@@ -38,9 +38,11 @@ class UsersModel
     {
         return $this->bdd->query("SELECT user_name,date_create FROM users")->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function deleteuserbyid($id) 
+    public function deleteuserbyId($name_user) 
     {
-        $query = "DELETE from users where id_user = $id ;" ;
-        return $this->bdd->query($query)->fetchAll(PDO::FETCH_ASSOC) ;
+        $stmt = $this->bdd->prepare("DELETE * from users where user_name = name_user") ;
+        $stmt->execute(["name_user => $name_user"]) ; 
+        
+
     }
 }
