@@ -46,6 +46,7 @@ switch($page)
         include_once "../backend/controller/postsController.php" ;
         $posts = new PostsController ;
         $posts->getPosts() ;
+        
         break ;
 
     case 'loginAdmin':
@@ -78,6 +79,12 @@ switch($page)
     $postsController->getUserPosts();
     break;
 
+    case 'pageadmin' :
+        include_once "../backend/controller/usersController.php";
+        $user = new UsersController ;
+        $user->getallusers_admin() ;
+        break ;
+            
     default :
     include './404.php';
 }

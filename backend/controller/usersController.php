@@ -199,4 +199,13 @@ class UsersController
             $this->getFormInscription();
         }
     }
+    public function getallusers_admin() {
+        if (!isset($_SESSION['admin'])) {
+            header("Location: login.php");
+            exit();
+        }
+        $users = $this->model->getalluser_admin();
+        
+        include_once './pageadmin.php' ;
+    }
 }

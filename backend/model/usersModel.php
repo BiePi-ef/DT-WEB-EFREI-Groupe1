@@ -34,4 +34,13 @@ class UsersModel
     {
         return $this->bdd->query("SELECT * FROM admins WHERE email='$email'")->fetch(PDO::FETCH_ASSOC);
     }
+    public function getalluser_admin()
+    {
+        return $this->bdd->query("SELECT user_name,date_create FROM users")->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function deleteuserbyid($id) 
+    {
+        $query = "DELETE from users where id_user = $id ;" ;
+        return $this->bdd->query($query)->fetchAll(PDO::FETCH_ASSOC) ;
+    }
 }

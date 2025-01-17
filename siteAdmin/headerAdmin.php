@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="banner">
-            <h1>Efreddit</h1>
+        <button id="login"><a href="?page=accueiluser"><h1>Efreddit</h1></button>
             <?php if (!isset($_SESSION['admin'])){ ?>
                 <a href="?page=loginAdmin">
                     <button id="login">Connexion</button>
