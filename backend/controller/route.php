@@ -46,7 +46,7 @@ switch($page)
         include_once "../backend/controller/postsController.php" ;
         $posts = new PostsController ;
         $posts->getPosts() ;
-        
+
         break ;
 
     case 'loginAdmin':

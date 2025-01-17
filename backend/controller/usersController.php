@@ -204,8 +204,24 @@ class UsersController
             header("Location: login.php");
             exit();
         }
+    
         $users = $this->model->getalluser_admin();
-        
-        include_once './pageadmin.php' ;
+    
+        if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == 'POST' and isset($_POST['deleteuser'])) {
+            if ($this->model->deleteUserbyId($_POST['user_name'])) { // Corrected line
+                echo 'Le user ' . $_POST['user_name'] . ' a été supprimé avec succès !';
+            } else {
+                // Handle deletion failure (e.g., display an error message)
+                echo "Erreur lors de la suppression de l'utilisateur."; 
+            }
+            unset($_POST['deleteuser']);
+            $this->getallusers_admin(); 
+        }
+    
+        include_once './pageadmin.php';
+    }
+    public function deleteUserbyId($name_user) 
+    {
+        return $this->model->deleteuserbyId($name_user)  ;
     }
 }
