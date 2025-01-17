@@ -13,7 +13,7 @@
         <div id="images" x-data="{ images_url: [] }">
             <?php include_once './addImage.php'; ?>
             <template x-for="image_url in images_url">
-                <p x-text="image_url"></p>
+                <img :src="image_url" />
             </template>
         </div>
         <button type="submit" name="createPost">Publier le Post</button>

@@ -11,9 +11,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'accueilUser';
 
 switch($page)
 {
-    case 'test':
-        include_once "../siteUser/test.php";
-        break;
+    // case 'test':
+    //     include_once "../siteUser/test.php";
+    //     break;
 
     case 'accueilUser':
         include_once "../backend/controller/postsController.php";
