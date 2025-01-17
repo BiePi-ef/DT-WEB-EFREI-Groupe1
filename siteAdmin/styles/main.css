@@ -10,6 +10,7 @@ body {
     flex-direction: column;
 }
 
+
 /* Bannière */
 .banner {
     background-color: #00008B;
@@ -87,6 +88,10 @@ body {
     border: none;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
+}
+
+#postFeed {
+    display: flex;
 }
 
 /* Style des posts */
