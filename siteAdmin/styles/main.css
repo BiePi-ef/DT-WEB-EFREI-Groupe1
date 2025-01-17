@@ -148,16 +148,15 @@ body {
 }
 
 /* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 0;
+#loginBtn {
+    background-color: white;
+    color: black;
+    border: 1px solid #00008B;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 /* Responsiveness */
@@ -185,17 +184,5 @@ footer {
     #createPostBtn {
         bottom: 1rem;
         right: 1rem;
-    } 
+    }
 }
-.button{
-    display: flex;
-    height: 200px;
-    align-items: flex-end;
-    justify-content: flex-start;     
-}
-.adminpage {
-    display: flex;
-    height: 200px;
-    align-items: flex-end;
-    justify-content: flex-start;
-  }

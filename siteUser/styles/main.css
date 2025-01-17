@@ -187,15 +187,4 @@ footer {
         right: 1rem;
     } 
 }
-.button{
-    display: flex;
-    height: 200px;
-    align-items: flex-end;
-    justify-content: flex-start;     
-}
-.adminpage {
-    display: flex;
-    height: 200px;
-    align-items: flex-end;
-    justify-content: flex-start;
-  }
+

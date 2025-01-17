@@ -23,9 +23,9 @@
                 </a>
             <?php } else { $name = $_SESSION['admin']['admin_name'] ?>
                 <a href="?page=pageadmin">
-                    <button id="adminpage">Page admin</button></a>
+                    <button id="loginBtn">Page admin</button></a>
             <?php }?>   
-            <a href="?page=logout"><button id="logout">Deconnexion</button></a>
+            <a href="?page=logout"><button id="loginBtn">Deconnexion</button></a>
             <?php }?>
                 
         </div>
