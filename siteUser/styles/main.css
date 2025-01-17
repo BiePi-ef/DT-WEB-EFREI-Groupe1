@@ -8,6 +8,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    min-height: 45rem;
 }
 
 /* Bannière */
@@ -24,9 +25,22 @@ body {
     margin: 0;
 }
 
+#accueil {
+    background-color: transparent; /* Fond blanc pour le bouton Efreddit */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur pointer */
+    font-size: 18px;
+    color: white;
+}
+
+#accueil a {
+    text-decoration: none; /* Aucun soulignement sur le lien */
+    color: inherit; /* Couleur du texte héritée du parent (blanc) */
+}
+
 #loginBtn {
     background-color: white;
-    color: #00008B;
+    color: black;
     border: 1px solid #00008B;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -36,7 +50,7 @@ body {
 }
 
 #loginBtn:hover {
-    background-color: #00008B;
+    background-color: black;
     color: white;
 }
 
@@ -62,20 +76,25 @@ body {
 .posts-header h2 {
     flex: 2;
     text-align: center;
-    margin: 0;
+    margin: 1rem;
 }
 
+/* Styles pour le bouton de tri */
 #sortPosts {
     padding: 0.5rem;
+    border-radius: 10px; /* Arrondir les coins */
+    border: 3px solid #ccc; /* Bordure grise claire */
+    background-color: #f4f4f4; /* Fond gris clair */
 }
 
 .search-form {
     display: flex;
     justify-content: flex-end;
+    padding: 1rem;
 }
 
 .search-input {
-    padding: 0.5rem;
+    padding: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 4px 0 0 4px;
 }
@@ -95,6 +114,7 @@ body {
     margin-bottom: 1rem;
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 80%;
 }
 
 .post h3 {
@@ -124,6 +144,7 @@ body {
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 5px;
+    text-decoration: none; /* Aucun soulignement sur le lien */
 }
 
 /* Footer */
@@ -131,10 +152,11 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    margin-top: auto;
 }
 
 /* Responsiveness */

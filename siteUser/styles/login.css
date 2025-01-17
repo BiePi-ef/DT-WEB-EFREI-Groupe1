@@ -1,17 +1,16 @@
-/* Styles généraux */
 html, body {
-    height: 100%; /* Assurez-vous que le corps prend toute la hauteur */
+    height: 100%;
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4; /* Fond de page */
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Aligne les éléments en colonne */
+    flex-direction: column;
 }
 
 .banner {
