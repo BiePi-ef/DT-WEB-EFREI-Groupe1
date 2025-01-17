@@ -16,11 +16,5 @@
 
     <?php include_once './postsFeed.php'; ?>
 
-    <?php if (!isset($_SESSION['admin'])){ ?>
-                </a>
-            <?php } else { $name = $_SESSION['admin']['admin_name'] ?>
-                <a href="?page=pageadmin">
-                    <button id="login">Page admin</button>
-            <?php }?>
 
    

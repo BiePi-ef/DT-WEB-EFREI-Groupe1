@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efreddit</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../siteUser/styles/main.css">
 </head>
 <body>
     <header>
@@ -18,7 +18,13 @@
                     <button id="login">Connexion</button>
                 </a>
         <?php } else {  ?>
-            <p><?php echo htmlspecialchars($_SESSION['admin']['admin_name']); ?></p>     
+            <p><?php echo htmlspecialchars($_SESSION['admin']['admin_name']); ?></p>  
+            <?php if (!isset($_SESSION['admin'])){ ?>
+                </a>
+            <?php } else { $name = $_SESSION['admin']['admin_name'] ?>
+                <a href="?page=pageadmin">
+                    <button id="adminpage">Page admin</button></a>
+            <?php }?>   
             <a href="?page=logout"><button id="logout">Deconnexion</button></a>
             <?php }?>
                 
