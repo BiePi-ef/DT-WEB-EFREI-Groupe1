@@ -13,33 +13,36 @@ class PostsController
 
     public function createPost(){
 
-        if(isset($_POST['title']))
+        if(isset($_POST['createPost']))
         {
+            // echo var_dump($_POST['images_url']);
+
             echo "works";
             $title = $_POST['title'];
             $content = $_POST['content'];
-            $id_user = $_POST['id_user'];
-            $images = $_POST['images'];
+            $id_user = $_SESSION['user']['id_user'];
+            // $images = $_POST['images'];
 
 
             $isPostCreated = $this->model->createPost($title,$content,$id_user);
             // images is an array of images links
-            $areImagesCreated = $this->model->addImages($images);
+            // $areImagesCreated = $this->model->addImages($images);
 
             if($isPostCreated)
             {
                 echo "post enregistré ok";
-            }
-            if($areImagesCreated)
-            {
-                echo "</br> images enregistrées ok";
+                // if($areImagesCreated)
+                // {
+                //     echo "</br> images enregistrées ok";
+                // }
+                header("Location: indexUser.php");
             }
             else
             {
                 echo "erreur lors de l'enregistrement du post";
                 include_once './createPost.php';
             }
-
+            
         }
         else{
             include_once './createPost.php';
@@ -103,9 +106,21 @@ class PostsController
             header("Location: login.php");
             exit();
         }
-
+        
         $id_user = $_SESSION['user']['id_user'];
         $posts = $this->model->getPostsByUser($id_user);
+        
+        $imagesArray = [];
+        for ($i = 0; $i<count($posts); $i ++)
+        {
+            $imagesArray = $this->getImagesByIdPost($posts[$i]['id_post']);
+
+            $posts[$i]['images'] = [];
+            foreach ($imagesArray as $imageArray)
+            {
+                array_push($posts[$i]['images'], $imageArray['link_image']);
+            }
+        }
 
         // Incluez la vue pour afficher les posts
         include_once './yourPosts.php';
