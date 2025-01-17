@@ -15,5 +15,5 @@
         </div>
         <button type="submit" id="registerBtn">S'inscrire</button>
     </form>
-    <p>Vous avez déjà un compte ? <a href="?page=loginUser">Connectez-vous</a></p>
+    <p>Vous avez déjà un compte ? <a href="?page=loginAdmin">Connectez-vous</a></p>
 </div>
