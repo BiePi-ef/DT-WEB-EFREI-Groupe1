@@ -1,0 +1,29 @@
+Travail d'équipe :
+
+organisation : 
+Trello
+-> on prévoit les fonctionnalités du site en avance, avec un backlog
+	L> chaque fiche du backlog est une fonctionnalité unique (info cellulaire)
+	L> chaque fiche est composée de :
+		- 'je suis…' (user, client, admin, superadmin). On définit qui aura accès à la fonctionnalité.
+		- 'je veux…' (action). On définit ce que l'action doit réaliser.
+	
+	1) On fait des wireframes simple
+	2) On fait des cartes de backlog en fonction des wireframes
+	3) On organise les cartes dans des EPICs, dans grandes catégories
+
+-=> On doit envoyer le backlog avec le découpage en épic avant de commencer faire les étapes suivantes.
+
+=> on organise les EPICs en 'ToDo', 'Doing', 'ToValidate', 'Done'
+
+=> on discute sous les cartes et on peut faire des sous taches.
+
+==> PROJET <== 
+
+Option de connexion (post apparaissent en fonction de la personne connecté)
+Site avec des posts contenant :
+	-> Titre
+	-> Content
+	-> Images
+
+(optionnel à la fin : markdown sur le content)

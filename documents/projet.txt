@@ -1,0 +1,10 @@
+API qui propose des routes qu'on observe avec des posts et des gets
+
+-> on doit faire l'API en premier
+-> on doit faire l'API sur des post
+-> une fois que ca marche on fait l'authentification (et on reverifie que ca marche bien)
+-> on fait la suite
+
+
+méthode 2 :
+On fait des templates en php qui contiennent l'html généré/css
